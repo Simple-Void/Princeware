@@ -4,7 +4,7 @@
     {
         #region system explanation
         //this is effectively a 5 wheel enigma
-        //in bigger terms it's a progressive quintuple asynchronous wheel cipher with switchboard ciphering
+        //in bigger terms it's a progressive quintuple offset wheel cipher with switchboard ciphering
         //the wheels and swtichboard must be set the same between encoding and decoding users, else the system will not work
         //this program works using extended unicode which should be standard on any modern computer
         //your text is swapped from a string character to the raw unicode code
