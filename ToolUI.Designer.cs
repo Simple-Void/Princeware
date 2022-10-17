@@ -44,7 +44,7 @@
             this.cmbW5Position = new System.Windows.Forms.ComboBox();
             this.cmbW5Select = new System.Windows.Forms.ComboBox();
             this.lblWHL5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbSwtch = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rdTEXT = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,34 +76,39 @@
             // 
             // cmbW1Select
             // 
+            this.cmbW1Select.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW1Select.FormattingEnabled = true;
             this.cmbW1Select.Location = new System.Drawing.Point(12, 32);
             this.cmbW1Select.Name = "cmbW1Select";
-            this.cmbW1Select.Size = new System.Drawing.Size(72, 28);
+            this.cmbW1Select.Size = new System.Drawing.Size(72, 25);
             this.cmbW1Select.TabIndex = 1;
+            this.cmbW1Select.SelectedIndexChanged += new System.EventHandler(this.cmbW1Select_SelectedIndexChanged);
             // 
             // cmbW1Position
             // 
+            this.cmbW1Position.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW1Position.FormattingEnabled = true;
             this.cmbW1Position.Location = new System.Drawing.Point(12, 66);
             this.cmbW1Position.Name = "cmbW1Position";
-            this.cmbW1Position.Size = new System.Drawing.Size(72, 28);
+            this.cmbW1Position.Size = new System.Drawing.Size(72, 25);
             this.cmbW1Position.TabIndex = 2;
             // 
             // cmbW2Position
             // 
+            this.cmbW2Position.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW2Position.FormattingEnabled = true;
             this.cmbW2Position.Location = new System.Drawing.Point(90, 66);
             this.cmbW2Position.Name = "cmbW2Position";
-            this.cmbW2Position.Size = new System.Drawing.Size(72, 28);
+            this.cmbW2Position.Size = new System.Drawing.Size(72, 25);
             this.cmbW2Position.TabIndex = 5;
             // 
             // cmbW2Select
             // 
+            this.cmbW2Select.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW2Select.FormattingEnabled = true;
             this.cmbW2Select.Location = new System.Drawing.Point(90, 32);
             this.cmbW2Select.Name = "cmbW2Select";
-            this.cmbW2Select.Size = new System.Drawing.Size(72, 28);
+            this.cmbW2Select.Size = new System.Drawing.Size(72, 25);
             this.cmbW2Select.TabIndex = 4;
             // 
             // lblWHL2
@@ -119,18 +124,20 @@
             // 
             // cmbW3Position
             // 
+            this.cmbW3Position.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW3Position.FormattingEnabled = true;
             this.cmbW3Position.Location = new System.Drawing.Point(168, 66);
             this.cmbW3Position.Name = "cmbW3Position";
-            this.cmbW3Position.Size = new System.Drawing.Size(72, 28);
+            this.cmbW3Position.Size = new System.Drawing.Size(72, 25);
             this.cmbW3Position.TabIndex = 8;
             // 
             // cmbW3Select
             // 
+            this.cmbW3Select.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW3Select.FormattingEnabled = true;
             this.cmbW3Select.Location = new System.Drawing.Point(168, 32);
             this.cmbW3Select.Name = "cmbW3Select";
-            this.cmbW3Select.Size = new System.Drawing.Size(72, 28);
+            this.cmbW3Select.Size = new System.Drawing.Size(72, 25);
             this.cmbW3Select.TabIndex = 7;
             // 
             // lblWHL3
@@ -146,18 +153,20 @@
             // 
             // cmbW4Position
             // 
+            this.cmbW4Position.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW4Position.FormattingEnabled = true;
             this.cmbW4Position.Location = new System.Drawing.Point(246, 66);
             this.cmbW4Position.Name = "cmbW4Position";
-            this.cmbW4Position.Size = new System.Drawing.Size(72, 28);
+            this.cmbW4Position.Size = new System.Drawing.Size(72, 25);
             this.cmbW4Position.TabIndex = 11;
             // 
             // cmbW4Select
             // 
+            this.cmbW4Select.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW4Select.FormattingEnabled = true;
             this.cmbW4Select.Location = new System.Drawing.Point(246, 32);
             this.cmbW4Select.Name = "cmbW4Select";
-            this.cmbW4Select.Size = new System.Drawing.Size(72, 28);
+            this.cmbW4Select.Size = new System.Drawing.Size(72, 25);
             this.cmbW4Select.TabIndex = 10;
             // 
             // lblWHL4
@@ -173,18 +182,20 @@
             // 
             // cmbW5Position
             // 
+            this.cmbW5Position.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW5Position.FormattingEnabled = true;
             this.cmbW5Position.Location = new System.Drawing.Point(324, 66);
             this.cmbW5Position.Name = "cmbW5Position";
-            this.cmbW5Position.Size = new System.Drawing.Size(72, 28);
+            this.cmbW5Position.Size = new System.Drawing.Size(72, 25);
             this.cmbW5Position.TabIndex = 14;
             // 
             // cmbW5Select
             // 
+            this.cmbW5Select.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbW5Select.FormattingEnabled = true;
             this.cmbW5Select.Location = new System.Drawing.Point(324, 32);
             this.cmbW5Select.Name = "cmbW5Select";
-            this.cmbW5Select.Size = new System.Drawing.Size(72, 28);
+            this.cmbW5Select.Size = new System.Drawing.Size(72, 25);
             this.cmbW5Select.TabIndex = 13;
             // 
             // lblWHL5
@@ -198,13 +209,13 @@
             this.lblWHL5.TabIndex = 12;
             this.lblWHL5.Text = "WHEEL 5";
             // 
-            // comboBox2
+            // cmbSwtch
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(488, 32);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(122, 28);
-            this.comboBox2.TabIndex = 16;
+            this.cmbSwtch.FormattingEnabled = true;
+            this.cmbSwtch.Location = new System.Drawing.Point(488, 32);
+            this.cmbSwtch.Name = "cmbSwtch";
+            this.cmbSwtch.Size = new System.Drawing.Size(122, 28);
+            this.cmbSwtch.TabIndex = 16;
             // 
             // label1
             // 
@@ -361,7 +372,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlENCODEorDECODE);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbSwtch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbW5Position);
             this.Controls.Add(this.cmbW5Select);
@@ -407,7 +418,7 @@
         private ComboBox cmbW5Position;
         private ComboBox cmbW5Select;
         private Label lblWHL5;
-        private ComboBox comboBox2;
+        private ComboBox cmbSwtch;
         private Label label1;
         private RadioButton rdTEXT;
         private Label label2;
