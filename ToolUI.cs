@@ -87,7 +87,7 @@
             for (int c = 0; c < AllWheelFiles.Length; c++)
             {
                 //if it is a text file it adds it
-                if (AllWheelFiles[c].Substring((AllWheelFiles[c].Length - 4), 4) == ".txt")
+                if (new FileInfo(AllWheelFiles[c]).Extension == ".txt") // USE FILEINFO TO CHECK FILE EXTENSION.
                 {
                     //adds to the real usable files
                     UsableWheelFiles.Add(AllWheelFiles[c]);
