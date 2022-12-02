@@ -97,7 +97,7 @@
             //read them into the hashtable
             //variable to give a proper ID for dictionary
             int ID = 0;
-            for (int c = 0; c < ((UsableWheelFiles).ToArray()).Length; c++)
+            for (int c = 0; c < UsableWheelFiles.Count; c++)
             {
                 //manipulate file name into JUST the name without .txt
                 string fileName = (Path.GetFileName(UsableWheelFiles[c]));
@@ -119,15 +119,14 @@
 
             #region switchboardsCode
             //switchboards
-            string[] AllBoardFiles = Directory.GetFiles(@"C:\Users\Public\PRINCEWARE\SWTCHBRDS");
-            Dictionary<int, int> currentBoardContents = new Dictionary<int, int>();
-            List<string> UsableBoardFiles = new List<string>();
+            List<string> AllBoardFiles = Directory.GetFiles(@"C:\Users\Public\PRINCEWARE\SWTCHBRDS").ToList();
+            List<int> currentBoardContents = new List<int>();
 
             //these checks are laid out to remove as many files as possible with each step to
             //limit CPU time as much as possible
             //quick check to remove all non-text files to allow proper displaying
             //this is big code but is REALLY robust
-            for (int c = 0; c < AllBoardFiles.Length; c++)
+            for (int c = 0; c < AllBoardFiles.Count; c++)
             {
                 //clear previous cycle
                 currentBoardContents.Clear();
@@ -143,32 +142,35 @@
                         for (int i = 0; i <= 65535; i++)
                         {
                             //is it parsable, if yes add to the dictionary, else it's invalid
-                            if (int.TryParse(boardAsLines[i], out int placeHolder) == true)
+                            if (int.TryParse(boardAsLines[i], out int placeHolder))
                             {
                                 //THIS DICTIONARY CHECK IS REALLY REALLY SLOW
                                 //PLEASE FIND A BETTER WAY
                                 //check if it is already present within the dictionary
-                                if (currentBoardContents.ContainsValue(int.Parse(boardAsLines[i])))
+                                if (currentBoardContents.Contains(int.Parse(boardAsLines[i])))
                                 {
                                     //contains it already, invalid board
                                     valid = false;
+                                    break;
                                 } else
                                 {
                                     //not present, add to dict for checks
-                                    currentBoardContents.Add(i, int.Parse(boardAsLines[i]));
+                                    currentBoardContents.Add(int.Parse(boardAsLines[i]));
                                 }
-                            } else
+                            } else 
                             {
                                 //not full of ints
                                 valid = false;
+                                break;
                             }
                         }
                         //if it has passed the divine trials it has earnt its right among the gods
                         //add to the list
-                        if (valid == true)
+                        if (valid)
                         {
                             //adds to the real usable files
-                            UsableBoardFiles.Add(AllBoardFiles[c]);
+                            AllBoardFiles.Remove(AllBoardFiles[c]);
+                            
                         }
                     }
                 }
@@ -177,10 +179,10 @@
             //read them into the hashtable
             //variable to give a proper ID for dictionary
             ID = 0;
-            for (int c = 0; c < ((UsableBoardFiles).ToArray()).Length; c++)
+            for (int c = 0; c < AllBoardFiles.Count(); c++)
             {
                 //manipulate file name into JUST the name without .txt
-                string fileName = (Path.GetFileName(UsableBoardFiles[c]));
+                string fileName = (Path.GetFileName(AllBoardFiles[c]));
                 fileName = fileName.Substring(0, fileName.Length - 4);
                 AllWheelsNames.Add(fileName);
                 //add the string into all the comboboxes
