@@ -80,27 +80,26 @@
             //wheels
             //get all the files in the directories
             //encoding wheels
-            string[] AllWheelFiles = Directory.GetFiles(@"C:\Users\Public\PRINCEWARE\WHLS");
-            List<string> UsableWheelFiles = new List<string>();
+            List<string> AllWheelFiles = Directory.GetFiles(@"C:\Users\Public\PRINCEWARE\WHLS").ToList();
 
             //quick check to remove all non-text files to allow proper displaying
-            for (int c = 0; c < AllWheelFiles.Length; c++)
+            for (int c = 0; c < AllWheelFiles.Count; c++)
             {
                 //if it is a text file it adds it
-                if (new FileInfo(AllWheelFiles[c]).Extension == ".txt") // USE FILEINFO TO CHECK FILE EXTENSION.
+                if (new FileInfo(AllWheelFiles[c]).Extension != ".txt") // USE FILEINFO TO CHECK FILE EXTENSION.
                 {
-                    //adds to the real usable files
-                    UsableWheelFiles.Add(AllWheelFiles[c]);
+                    //remove if unusable.
+                    AllWheelFiles.Remove(AllWheelFiles[c]);
                 }
             }
 
             //read them into the hashtable
             //variable to give a proper ID for dictionary
             int ID = 0;
-            for (int c = 0; c < UsableWheelFiles.Count; c++)
+            for (int c = 0; c < AllWheelFiles.Count; c++)
             {
                 //manipulate file name into JUST the name without .txt
-                string fileName = (Path.GetFileName(UsableWheelFiles[c]));
+                string fileName = (Path.GetFileName(AllWheelFiles[c]));
                 fileName = fileName.Substring(0, fileName.Length - 4);
                 AllWheelsNames.Add(fileName);
                 //add the string into all the comboboxes
@@ -112,7 +111,7 @@
                 //all non txt files have been removed
                 //gets the function to read into the dictionary
                 //next available ID is given and the program moves on
-                readWheelFile(ID, UsableWheelFiles[c]);
+                readWheelFile(ID, AllWheelFiles[c]);
                 ID++;
             }
             #endregion
