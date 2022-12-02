@@ -60,12 +60,9 @@
         {
             InitializeComponent();
             startup();
-            //get the unicode vals
-            //string absfvh = "ASCII wdym";
-            //byte[] AsciiCodes = Encoding.Unicode.GetBytes(absfvh);
         }
 
-        public void startup()
+        public async void startup()
         {
             //setup all the beginning jazz
             //select something by default to avoid errors
@@ -75,13 +72,11 @@
             readAllFiles();
         }
 
-        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
-        {
-            //what does this even do
-        }
-
+        //ideally move the usable file lists up top so all functions and procedures can access them
+        //easy enough fix I'll sort later though
         public void readAllFiles()
         {
+            #region wheelsCode
             //wheels
             //get all the files in the directories
             //encoding wheels
@@ -120,9 +115,9 @@
                 readWheelFile(ID, UsableWheelFiles[c]);
                 ID++;
             }
-            
-            //###
+            #endregion
 
+            #region switchboardsCode
             //switchboards
             string[] AllBoardFiles = Directory.GetFiles(@"C:\Users\Public\PRINCEWARE\SWTCHBRDS");
             Dictionary<int, int> currentBoardContents = new Dictionary<int, int>();
@@ -137,7 +132,7 @@
                 //clear previous cycle
                 currentBoardContents.Clear();
                 //if it is a text file it checks length before adding
-                if (AllBoardFiles[c].Substring((AllBoardFiles[c].Length - 4), 4) == ".txt")
+                if (new FileInfo(AllWheelFiles[c]).Extension == ".txt")
                 {
                     string[] boardAsLines = System.IO.File.ReadAllLines(AllBoardFiles[c]);
                     //check it is a complete switchboard
@@ -196,6 +191,7 @@
                 //readBoardFile(ID, UsableWheelFiles[c]);
                 ID++;
             }
+            #endregion
         }
 
         public void readWheelFile(int _index, string _filePath)
